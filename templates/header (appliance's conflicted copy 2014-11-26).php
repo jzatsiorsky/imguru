@@ -8,8 +8,17 @@
         <link href="/css/bootstrap-theme.min.css" rel="stylesheet"/>
         <link href="/css/styles-default.css" rel="stylesheet"/>
 
-
-	
+	<?php if (!empty($_SESSION["house"])): ?>
+		<?php if ($_SESSION["house"] == "Adams"): ?>
+			<link href="/css/styles-adams.css" rel="stylesheet"/>
+		<?php elseif ($_SESSION["house"] == "Cabot"): ?>
+			<link href="/css/styles-cabot.css" rel="stylesheet"/>
+		<?php else: ?>
+			<link href="/css/styles.css" rel="stylesheet"/>
+		<?php endif ?>
+	<?php else: ?>
+		<link href="/css/styles-default.css" rel="stylesheet"/>
+	<?php endif ?>
 
 
 	

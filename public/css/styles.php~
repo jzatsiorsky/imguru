@@ -1,12 +1,5 @@
-/**
- * styles.css
- *
- * Computer Science 50
- * Problem Set 7
- *
- * Global CSS.
- */
 
+<style type = "text/css">
 .container
 {
     /* center contents */
@@ -150,4 +143,5 @@ h1{
 	margin-right: 5px;
 	margin-top: 10px;
 }
+</style>
 

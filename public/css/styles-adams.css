@@ -37,20 +37,6 @@
     margin: 20px;
 }
 
-/* styling for the table */
-
-table{
-    margin: 20px;
-}
-
-td{
-    text-align: left;
-}
-
-td:hover{
-    color: red;
-}
-
 #middle .link
 {
     color: red;
@@ -83,7 +69,7 @@ h1{
 	width: 50%;
 	margin-left: auto;
 	margin-right: auto;
-	border: 8px solid black;
+	border: 8px solid #ffdd66;
 	border-radius: 9px;
 }
 
@@ -92,7 +78,7 @@ h1{
 	background-color: #A41034;
 	padding: 20px 0px 0px 0px;
 	width: 100%;
-	border: 8px solid black;
+	border: 8px solid #ffdd66;
 	border-radius: 9px;
 }
 
@@ -102,7 +88,7 @@ h1{
 
 
 .post{
-	border: 8px solid black;
+	border: 8px solid #ffdd66;
 	width: 500px;
 	margin: 20px auto; 
 	outline: 5px solid #A41034;

@@ -6,8 +6,13 @@
 
         <link href="/css/bootstrap.min.css" rel="stylesheet"/>
         <link href="/css/bootstrap-theme.min.css" rel="stylesheet"/>
-        <link href="/css/styles.css" rel="stylesheet"/>
+        <link href="/css/styles-default.css" rel="stylesheet"/>
 
+
+	
+
+
+	
         <?php if (isset($title)): ?>
             <title>IMguru: <?= htmlspecialchars($title) ?></title>
         <?php else: ?>
@@ -21,7 +26,6 @@
     </head>
 
     <body>
-	<script src="/js/scripts.js"></script>
 
         <div class="container">
 

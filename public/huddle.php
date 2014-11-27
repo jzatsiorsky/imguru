@@ -21,7 +21,7 @@
 			return false;
 		}
 		query("INSERT INTO huddle (userid, house, sport, message, date_time) VALUES (?, ?, ?, ?, DATE_FORMAT(NOW(),'%d %b %Y %r'))", $_SESSION["id"], $_SESSION["house"], $_POST["sport"], $_POST["message"]); 
-		redirect('#');
+		return true;
 
 	}
 	

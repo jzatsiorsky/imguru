@@ -60,7 +60,7 @@ td:hover{
 #middle .link:hover
 {
     background-color: yellow;
-    color: black;
+    color: #ffff44;
     text-decoration: none;
 }
 
@@ -74,25 +74,25 @@ td:hover{
 }
 
 h1{
-	color: #A41034;
+	color: #59a423;
 }
 
 .boxed{
-	background-color: #A41034;
+	background-color: #59a423;
 	padding: 50px 0px;
 	width: 50%;
 	margin-left: auto;
 	margin-right: auto;
-	border: 8px solid black;
+	border: 8px solid #ffff44;
 	border-radius: 9px;
 }
 
 .chat{
 	display:inline-block;
-	background-color: #A41034;
+	background-color: #59a423;
 	padding: 20px 0px 0px 0px;
 	width: 100%;
-	border: 8px solid black;
+	border: 8px solid #ffff44;
 	border-radius: 9px;
 }
 
@@ -102,17 +102,17 @@ h1{
 
 
 .post{
-	border: 8px solid black;
+	border: 8px solid #ffff44;
 	width: 500px;
 	margin: 20px auto; 
-	outline: 5px solid #A41034;
+	outline: 5px solid #59a423;
 }
 
 .postp{
 	text-align: left;
 	margin-left: 10px;
 	font-size: 18px;
-	color: #A41034;
+	color: #59a423;
 }
 
 .post_message{
@@ -135,7 +135,7 @@ h1{
 
 .message_title{
 	font-weight: bold;
-	color: #A41034;
+	color: #59a423;
 	text-shadow: 1px 1px gray;
 }
 

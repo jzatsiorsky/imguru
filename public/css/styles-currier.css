@@ -60,7 +60,7 @@ td:hover{
 #middle .link:hover
 {
     background-color: yellow;
-    color: black;
+    color: #45a249;
     text-decoration: none;
 }
 
@@ -83,7 +83,7 @@ h1{
 	width: 50%;
 	margin-left: auto;
 	margin-right: auto;
-	border: 8px solid black;
+	border: 8px solid #45a249;
 	border-radius: 9px;
 }
 
@@ -92,7 +92,7 @@ h1{
 	background-color: #A41034;
 	padding: 20px 0px 0px 0px;
 	width: 100%;
-	border: 8px solid black;
+	border: 8px solid #45a249;
 	border-radius: 9px;
 }
 
@@ -102,7 +102,7 @@ h1{
 
 
 .post{
-	border: 8px solid black;
+	border: 8px solid #45a249;
 	width: 500px;
 	margin: 20px auto; 
 	outline: 5px solid #A41034;

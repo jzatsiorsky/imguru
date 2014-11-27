@@ -1,11 +1,12 @@
             </div>
 
             <div id="bottom">
-                Copyright &#169; John Harvard
+                Created by Tim McNamara, Will Mendez, and James Zatsiorsky
             </div>
+	    <script src="/js/scripts.js"></script>
 
         </div>
-
+	
     </body>
 
 </html>
