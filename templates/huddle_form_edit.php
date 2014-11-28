@@ -26,7 +26,7 @@
 					   <textarea class="form-control" rows="3" style="resize:none; width:85%;text-align:left;" name="message" id="msg"></textarea>
 					</div>
 					<div class="form-group">
-						<button type="button" class="btn btn-default" id="create" onclick="createPost();">Create Post</button>
+						<button type="button" class="btn btn-default" disabled id="create" onclick="createPost();">Create Post</button>
 					</div>
 				</fieldset>
 			</div>
@@ -35,6 +35,7 @@
 			<!- View past posts>
 			<h3 class="message_title">Past posts.</h3>
 			<div id="past_posts">
+				<h3>Select a thread!</h3>
 			</div>
 		</div>
 	</div>
@@ -47,7 +48,7 @@
 	$( document ).ready(function() {
 		var parameters = {
         	sport: "general"
-    		};
+    	};
 		var messages = $.getJSON("search_sports.php", parameters)
 		messages.done(function(data) {
 			var length = data.length;
@@ -62,11 +63,11 @@
 				// for loop through each message
 				for (var i = length-1; i >= 0; i--)
 				{
-					document.getElementById('past_posts').innerHTML += "<div class='post'><p class='postp'>" + data[i].name + " said: <span class='like_num'>" + data[i].likes + " points</span> <button type='button' class='btn btn-default like' aria-label='Left Align' value=" + data[i].messageid + "><span class='glyphicon glyphicon-thumbs-up'></span> +1</button></p><p class = 'post_message'>" + data[i].message + "</p><p class='postp'>" + data[i].date_time + "</p></div><hr>";
+					document.getElementById('past_posts').innerHTML += "<div class='post'><p class='postp'>" + data[i].name + " said: <span class='like_num'>" + data[i].likes + " points</span> <button type='button' class='btn btn-default like' aria-label='Left Align' value=" + data[i].messageid + "><span class='glyphicon glyphicon-thumbs-up'></span> +1</button></p><p class = 'post_message'>" + data[i].message + "</p><p class='postp'>" + data[i].date_time + "</p></div>";
 				}
 			}
 		});
-	});
+	};
 
 
 
@@ -94,7 +95,7 @@
 				// for loop through each message
 				for (var i = length-1; i >= 0; i--)
 				{
-					document.getElementById('past_posts').innerHTML += "<div class='post'><p class='postp'>" + data[i].name + " said: <span class='like_num'>" + data[i].likes + " points</span> <button type='button' class='btn btn-default like' aria-label='Left Align' value=" + data[i].messageid + "><span class='glyphicon glyphicon-thumbs-up'></span> +1</button></p><p class = 'post_message'>" + data[i].message + "</p><p class='postp'>" + data[i].date_time + "</p></div><hr>";
+					document.getElementById('past_posts').innerHTML += "<div class='post'><p class='postp'>" + data[i].name + " said: <span class='like_num'>" + data[i].likes + " points</span> <button type='button' class='btn btn-default like' aria-label='Left Align' value=" + data[i].messageid + "><span class='glyphicon glyphicon-thumbs-up'></span> +1</button></p><p class = 'post_message'>" + data[i].message + "</p><p class='postp'>" + data[i].date_time + "</p></div>";
 				}
 			}
 		});
@@ -124,7 +125,7 @@
 				// for loop through each message
 				for (var i = length-1; i >= 0; i--)
 				{
-					document.getElementById('past_posts').innerHTML += "<div class='post'><p class='postp'>" + data[i].name + " said: <span class='like_num'>" + data[i].likes + " points</span><button type='button' class='btn btn-default like' aria-label='Left Align' value=" + data[i].messageid + "><span class='glyphicon glyphicon-thumbs-up'></span> +1</button></p><p class = 'post_message'>" + data[i].message + "</p><p class='postp'>" + data[i].date_time + "</p></div><hr>";
+					document.getElementById('past_posts').innerHTML += "<div class='post'><p class='postp'>" + data[i].name + " said: <span class='like_num'>" + data[i].likes + " points</span><button type='button' class='btn btn-default like' aria-label='Left Align' value=" + data[i].messageid + "><span class='glyphicon glyphicon-thumbs-up'></span> +1</button></p><p class = 'post_message'>" + data[i].message + "</p><p class='postp'>" + data[i].date_time + "</p></div>";
 				}
 			document.getElementById("msg").value = ""; // reset the text field
 			});
@@ -151,7 +152,7 @@
 				document.getElementById('past_posts').innerHTML = ""; // reset posts
 				for (var i = length-1; i >= 0; i--)
 				{
-					document.getElementById('past_posts').innerHTML += "<div class='post'><p class='postp'>" + data[i].name + " said: <span class='like_num'>" + data[i].likes + " points</span><button type='button' class='btn btn-default like' aria-label='Left Align' value=" + data[i].messageid + "><span class='glyphicon glyphicon-thumbs-up'></span> +1</button></p><p class = 'post_message'>" + data[i].message + "</p><p class='postp'>" + data[i].date_time + "</p></div><hr>";
+					document.getElementById('past_posts').innerHTML += "<div class='post'><p class='postp'>" + data[i].name + " said: <span class='like_num'>" + data[i].likes + " points</span><button type='button' class='btn btn-default like' aria-label='Left Align' value=" + data[i].messageid + "><span class='glyphicon glyphicon-thumbs-up'></span> +1</button></p><p class = 'post_message'>" + data[i].message + "</p><p class='postp'>" + data[i].date_time + "</p></div>";
 				}
 			});
 

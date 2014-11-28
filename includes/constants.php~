@@ -21,4 +21,7 @@
     // your database's username
     define("USERNAME", "jharvard");
 
+	// captain password
+	define("CAPTAIN", "crimson");
+
 ?>

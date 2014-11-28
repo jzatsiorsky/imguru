@@ -38,11 +38,20 @@
 				<label class="radio-inline"><input type="radio" name="year" value = "2016" >Senior</label>
 				<label class="radio-inline"><input type="radio" name="year" value = "1">N/A</label>
 			</div>
+			
 			<div class="form-group">
 				 <input class="form-control" name="password" placeholder="Password" type="password"/>
 			</div>
 			<div class ="form-group">
 				<input class ="form-control" name="confirmation" placeholder="Confirm Password" type="password"/>
+			</div>
+			<div class="form-group">
+				<p class="result_score">Captain?</p>
+				<label class="radio-inline"><input type="radio" name="captain" value = "0" checked="true">No</label>
+				<label class="radio-inline"><input type="radio" name="captain" value = "1">Yes</label>
+			</div>
+			<div class="form-group">
+				 <input class="form-control" name="captainpassword" placeholder="Captain Password" type="password"/>
 			</div>
 			<div class="form-group">
 				<button type="submit" class="btn btn-default">Register</button>

@@ -26,10 +26,14 @@
         {
             apologize("Please ensure that the passwords you entered matched.");
         }
+		else if ($_POST["captain"] == "1" && $_POST["captainpassword"] != CAPTAIN)
+		{
+			apologize("Incorrect captain password.");
+		}
         else
         {
             // error registering
-            if (query("INSERT INTO users (email, password, house, captain, year, name) VALUES (?, ?, ?, ?, ?, ?)", $_POST["email"], crypt($_POST["password"]), $_POST["house"], "0", $_POST["year"], $_POST["first_name"]." ".$_POST["last_name"]) === false)
+            if (query("INSERT INTO users (email, password, house, captain, year, name) VALUES (?, ?, ?, ?, ?, ?)", $_POST["email"], crypt($_POST["password"]), $_POST["house"], $_POST["captain"], $_POST["year"], $_POST["first_name"]." ".$_POST["last_name"]) === false)
             {
                 apologize("There was an error registering your account. Try using a different username.");
             }
@@ -41,8 +45,9 @@
                 $id = $rows[0]["userid"];
 				
                 $_SESSION["id"] = $id;               
-
 				$_SESSION["house"] = $_POST["house"];
+				$_SESSION["name"] = $_POST["first_name"] . " " . $_POST["last_name"];
+				$_SESSION["captain"] = $_POST["captain"];
                 
                 // log the user in
                 redirect("../index.php");

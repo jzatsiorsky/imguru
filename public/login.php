@@ -38,6 +38,8 @@
                 // remember that user's now logged in by storing user's ID in session
                 $_SESSION["id"] = $row["userid"];
 		$_SESSION["house"] = $row["house"];
+		$_SESSION["name"] = $row["name"];
+		$_SESSION["captain"] = $row["captain"];
 
                 // redirect to portfolio
                 redirect("/");
