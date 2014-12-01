@@ -133,8 +133,9 @@
 
 	$(document).on('click', "button.like", function() {
 		var messageid = $(this).attr('value'); // get the messageid from the clicked button
+
 		// add a like to the database with given messageid
-		$.ajax({
+		var ajax = $.ajax({
   			type: "POST",
   			url: "add_like.php/",
   			data: {  messageid: messageid }
@@ -143,7 +144,7 @@
 			// get the total number of likes
 			var sport = document.getElementById("thr class='post_break'eads").value;
 			var parameters = {
-		    	sport: sport
+				sport: sport
 			};
 			var messages = $.getJSON("search_sports.php", parameters)
 			messages.done(function(data) {
@@ -151,9 +152,14 @@
 				document.getElementById('past_posts').innerHTML = ""; // reset posts
 				for (var i = length-1; i >= 0; i--)
 				{
-					document.getElementById('past_posts').innerHTML += "<div class='post'><p class='postp'>" + data[i].name + " said: <span class='like_num'>" + data[i].likes + " points</span><button type='button' class='btn btn-default like' aria-label='Left Align' value=" + data[i].messageid + "><span class='glyphicon glyphicon-thumbs-up'></span> +1</button></p><p class = 'post_message'>" + data[i].message + "</p><p class='postp'>" + data[i].date_time + "</p></div><hr class='post_break'>";
+					if (data[i].likes == 1)
+						var points = " point";	
+					else
+						var points = " points";
+					document.getElementById('past_posts').innerHTML += "<div class='post'><p class='postp'>" + data[i].name + " said: <span class='like_num'>" + data[i].likes + points + "</span><button type='button' class='btn btn-default like' aria-label='Left Align' value=" + data[i].messageid + "><span class='glyphicon glyphicon-thumbs-up'></span> +1</button></p><p class = 'post_message'>" + data[i].message + "</p><p class='postp'>" + data[i].date_time + "</p></div><hr class='post_break'>";
 				}
 			});
+			
 
 		});
 	});

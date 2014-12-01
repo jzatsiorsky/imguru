@@ -2,9 +2,68 @@
 <?php include 'navigation.php';?>
 
 <!- When the document loads, pull out the ten most recent game results for the scores ticker>
-
+<h4>Recent results from around the league.</h4>
 <div class="ticker_container" id="ticker">
 </div>
+<br>
+
+<div>
+	<h1>My games</h1>
+</div>
+
+<div>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Sport</th>
+                <th>Opponent</th>
+                <th>Date</th>
+                <th>Time</th>
+                <th>Location</th>
+            </tr>
+        </thead>
+        
+		
+		<?php if (empty($rows)): ?>
+				</table>
+				<h3>You haven't signed up for any games yet. Click the Games tab above to get started! </h3>		
+		<?php else: ?>
+		
+		    <?php foreach ($rows as $row): ?>
+
+			<!- determine the opponent >
+			<?php
+				if ($row["team1"] == $_SESSION["house"])
+					$opponent = $row["team2"];
+				else
+					$opponent = $row["team1"];
+			?>
+
+		    <tr>
+		        <td><?= $row["sport"] ?></td>
+		        <td><?= $opponent ?></td>
+		        <td><?= $row["date"] ?></td>
+		        <td><?= $row["time"] ?></td>
+		        <td><?= $row["location"] ?></td>
+		    </tr>
+
+		    <?php endforeach ?>
+	
+    		</table>
+		<?php endif ?>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

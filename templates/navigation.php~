@@ -1,8 +1,7 @@
 <! Adapted from getbootstrap.com>
 
-<div id="nav_header">
-	<h1 class="title"><?= htmlspecialchars($_SESSION["house"]) ?> House Intramurals</h1>
-</div>
+<h1 class="title"><?= htmlspecialchars($_SESSION["house"]) ?> House Intramurals</h1>
+
 <?php if (!empty($_SESSION["name"])): ?>
 	<div style="text-align:right;">
     		<h5>Welcome, <?= htmlspecialchars($_SESSION["name"]) ?>!</h5>
@@ -20,8 +19,8 @@
 	<?php if ($_SESSION["captain"] == 1): ?>
 		<li><a href="submit_result.php">Submit Result</a></li>
 	<?php endif ?>
-        <li><a href="#">Standings</a></li>   
-		<li><a href="/huddle.php">The Huddle</a></li>  
+        <li><a href="standings.php">Standings</a></li>   
+		<li><a href="huddle.php">The Huddle</a></li>  
       </ul>
       <ul class="nav navbar-nav navbar-right">
 	<li class="dropdown">

@@ -251,7 +251,16 @@ h1{
 	width: 600px;
 }
 
-#bottom{
-	margin-top: 0;
+.standings{
+	width: 50%;
+}
+
+.standings td, .standings th{
+	text-align: center;
+}
+
+.bold_row td{
+	font-weight: bolder;
+	color: #A41034;
 }
 

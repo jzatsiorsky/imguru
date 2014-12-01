@@ -19,8 +19,8 @@
 	<?php if ($_SESSION["captain"] == 1): ?>
 		<li><a href="submit_result.php">Submit Result</a></li>
 	<?php endif ?>
-        <li><a href="#">Standings</a></li>   
-		<li><a href="/huddle.php">The Huddle</a></li>  
+        <li><a href="standings.php">Straus Cup Standings</a></li>   
+		<li><a href="huddle.php">The Huddle</a></li>  
       </ul>
       <ul class="nav navbar-nav navbar-right">
 	<li class="dropdown">

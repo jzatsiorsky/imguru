@@ -3,10 +3,10 @@
     // configuration
     require("../includes/config.php"); 
     
-    // get rows
-    $user = query("SELECT * FROM users WHERE userid = ?", $_SESSION["id"]);
+
+	$rows = query("SELECT * FROM games INNER JOIN mygames ON games.gameid=mygames.gameid WHERE mygames.userid = ?", $_SESSION["id"]);
 
     // render home page
-    render("portfolio.php", ["title" => "Home"]);
+    render("portfolio.php", ["title" => "Home", "rows" => $rows]);
 
 ?>
