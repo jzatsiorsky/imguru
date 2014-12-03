@@ -23,6 +23,7 @@
 
     /* override Bootstrap's 100% width for form controls */
     width: auto; 
+
     
     
     
@@ -39,30 +40,10 @@
 
 /* styling for the table */
 
-table{
-    margin: 20px;
-}
-
 td{
     text-align: left;
 }
 
-tr.result_row:hover{
-    color: #A41034;
-}
-
-#middle .link
-{
-    color: red;
-    margin: auto;
-}
-
-#middle .link:hover
-{
-    background-color: yellow;
-    color: black;
-    text-decoration: none;
-}
 
 #names 
 {
@@ -108,7 +89,6 @@ h1{
 
 #past_posts{
 	border: 8px solid black;
-	outline: 5px solid #A41034;
 	height: 500px;
 	overflow: scroll;
 }
@@ -135,20 +115,16 @@ h1{
 }
 
 .fixed{
-	width: 400px;
+	width: 40%;
 }
 
 .flexed{
 	margin-left: 80px;
 	margin-right: 50px;
 	flex-grow: 1;
+	
 }
 
-.message_title{
-	font-weight: bold;
-	color: #A41034;
-	text-shadow: 1px 1px gray;
-}
 
 .like{
 	margin-top: 10px;
@@ -163,7 +139,7 @@ h1{
 }
 
 .ticker_container{
-	width: 80%;
+	width: 1000px;
 	height: 70px;
 	margin-left: auto;
 	margin-right: auto;
@@ -196,7 +172,7 @@ h1{
 
 .ticker_team{
 	text-align: left;
-	margin-left: 2px;
+	margin-left: 8px;
 	margin-top: 0px;	
 	margin-bottom: 0px;
 	font-size: 13px;
@@ -204,7 +180,7 @@ h1{
 
 .ticker_score{
 	float: right;
-	margin-right: 4px;
+	margin-right: 8px;
 }
 
 .result_score{
@@ -216,10 +192,6 @@ h1{
 	color: white;
 }
 
-#results{
-	border: 5px solid #A41034;
-	border-radius: 8px;
-}
 
 .table{
 	width: 90%;
@@ -230,10 +202,12 @@ h1{
 
 #shield1{
 	float: left;
+	padding:0;
 }
 
 #shield2{
 	float:right;
+	padding:0;
 }
 
 .nav_header{
@@ -243,12 +217,17 @@ h1{
 }
 
 .title{
-	text-align:center;
+	float: right;
+	padding-top: 30px;
+	margin-right: 10px;
+	padding-bottom: 0;
 }
 
 #top{
 	margin: 0 auto;
-	width: 600px;
+	width: 1000px;
+	height: 125px;
+	margin-bottom: 0px;
 }
 
 .standings{
@@ -261,6 +240,96 @@ h1{
 
 .bold_row td{
 	font-weight: bolder;
+}
+
+.link{
 	color: #A41034;
 }
 
+.link:hover{
+	text-decoration: underline;
+	color: #A41034;
+}
+
+.result_item{
+	text-align: center;
+}	
+
+th{
+	text-align: center;
+}
+
+td{
+	text-align: center;
+}
+
+a:hover{
+	text-decoration: none;
+	color: black;
+}
+
+a{
+	color: #A41034;
+}
+
+fieldset{
+	border: none;
+}
+
+.round{
+	border: 3px solid black;
+	width: 1100px;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+.boxed-account{
+	background-color: #A41034;
+	padding: 20px 0px;
+	width: 100%;
+	border: 8px solid black;
+	border-radius: 9px;
+	height: 250px;
+}
+
+.boxed-captain{
+	background-color: #A41034;
+	padding: 20px 0px;
+	width: 30%;
+	border: 8px solid black;
+	border-radius: 9px;
+	height: 140px;
+	margin: 0 auto;
+}
+
+.fixed-account{
+	width: 50%;
+}
+
+.flexed-account{
+	flex-grow: 1;
+}
+
+nav{
+	margin-left: 0;
+	margin-right: 0;
+}
+
+
+.logo{
+	float: left;
+	margin-left:0;	
+	width: 280px;
+	height: 141px;
+	padding-bottom: 0;
+}
+
+.logo-login{
+	width: 280px;
+	height: 141px;
+}
+
+.cl-effect-8 a:hover{
+	text-decoration: none;
+	color: white;
+}

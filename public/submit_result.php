@@ -56,7 +56,7 @@
         
 
 	    // insert result into table
-	    if (query("UPDATE games SET team1score = ?, team2score = ? WHERE gameid = ?", $team1score, $team2score, $_POST["gameid"]) === false)
+	    if (query("UPDATE games SET team1score = ?, team2score = ?, result = TRUE WHERE gameid = ?", $team1score, $team2score, $_POST["gameid"]) === false)
 		{
 			apologize("Error submitting result.");
 		}

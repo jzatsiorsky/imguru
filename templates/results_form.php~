@@ -43,12 +43,12 @@
 			else
 			{
 			document.getElementById('results').innerHTML = ""; // reset HTML
-			var HTML = "<table class='table table-striped'><thead><tr><th>Date</th><th>Sport</th><th>Team One - Score</th><th>Team Two - Score</th></tr></thead><tbody>"; // start table
+			var HTML = "<table class='table table-bordered'><thead><tr><th>Date</th><th>Sport</th><th>Teams</th><th>Scores</th></tr></thead><tbody>"; // start table
 			// for loop through each message
 			for (var i = length-1; i >= 0; i--)
 			{
 				// add a new row for each game
-				HTML += "<tr class='result_row'><td>" + data[i].date + "</td><td>" + data[i].sport + "</td><td>" + data[i].team1 + " - " + data[i].team1score + "</td><td>" + data[i].team2 + " - " + data[i].team2score + "</td></tr>";
+				HTML += "<tr class='result_row'><td class='result_item' rowspan='2'>" + data[i].date + "</td><td class='result_item' rowspan='2'>" + data[i].sport + "</td><td class='result_item'>" + data[i].team1 + "</td><td class='result_item'>" + data[i].team1score + "</td></tr><tr><td class='result_item'>" + data[i].team2 + "</td><td class='result_item'>" + data[i].team2score + "</td></tr>";
 			}
 			document.getElementById('results').innerHTML += HTML + "</tbody></table>";
 			}
@@ -75,12 +75,12 @@
 			else
 			{
 				document.getElementById('results').innerHTML = ""; // reset HTML
-				var HTML = "<table class='table table-striped'><thead><tr><th>Date</th><th>Sport</th><th>Team One - Score</th><th>Team Two - Score</th></tr></thead><tbody>"; // start table
+				var HTML = "<table class='table table-bordered'><thead><tr><th>Date</th><th>Sport</th><th>Teams</th><th>Scores</th></tr></thead><tbody>"; // start table
 				// for loop through each message
 				for (var i = length-1; i >= 0; i--)
 				{
 					// add a new row for each game
-					HTML += "<tr class='result_row'><td>" + data[i].date + "</td><td>" + data[i].sport + "</td><td>" + data[i].team1 + " - " + data[i].team1score + "</td><td>" + data[i].team2 + " - " + data[i].team2score + "</td></tr>";
+					HTML += "<tr class='result_row'><td class='result_item' rowspan='2'>" + data[i].date + "</td><td class='result_item' rowspan='2'>" + data[i].sport + "</td><td class='result_item'>" + data[i].team1 + "</td><td class='result_item'>" + data[i].team1score + "</td></tr><tr><td class='result_item'>" + data[i].team2 + "</td><td class='result_item'>" + data[i].team2score + "</td></tr><br>";
 				}
 			document.getElementById('results').innerHTML += HTML + "</tbody></table>";
 			}
@@ -107,12 +107,12 @@
 			else
 			{
 				document.getElementById('results').innerHTML = ""; // reset HTML
-				var HTML = "<table class='table table-striped'><thead><tr><th>Date</th><th>Sport</th><th>Team One - Score</th><th>Team Two - Score</th></tr></thead><tbody>"; // start table
+				var HTML = "<table class='table table-bordered'><thead><tr><th>Date</th><th>Sport</th><th>Teams</th><th>Scores</th></tr></thead><tbody>"; // start table
 				// for loop through each message
 				for (var i = length-1; i >= 0; i--)
 				{
 					// add a new row for each game
-					HTML += "<tr class='result_row'><td>" + data[i].date + "</td><td>" + data[i].sport + "</td><td>" + data[i].team1 + " - " + data[i].team1score + "</td><td>" + data[i].team2 + " - " + data[i].team2score + "</td></tr>";
+					HTML += "<tr class='result_row'><td class='result_item' rowspan='2'>" + data[i].date + "</td><td class='result_item' rowspan='2'>" + data[i].sport + "</td><td class='result_item'>" + data[i].team1 + "</td><td class='result_item'>" + data[i].team1score + "</td></tr><tr><td class='result_item'>" + data[i].team2 + "</td><td class='result_item'>" + data[i].team2score + "</td></tr>";
 				}
 			document.getElementById('results').innerHTML += HTML + "</tbody></table>";
 			}

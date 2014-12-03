@@ -9,7 +9,7 @@
     if ($_SERVER["REQUEST_METHOD"] == "GET")
     {
         // render form
-        render("change_password_form.php", ["title" => "Change Password"]);
+        render("manage_account_form.php", ["title" => "Manage Account"]);
     }
     
     else if ($_SERVER["REQUEST_METHOD"] == "POST")
@@ -26,8 +26,9 @@
         else if ($rows[0]["password"] == crypt($_POST["cur_password"], $rows[0]["password"]) && $_POST["new_password1"] == $_POST["new_password2"])
         {
             query("UPDATE users SET password = ? WHERE userid = ?", crypt($_POST["new_password1"]), $_SESSION["id"]);
-            // log in
-            redirect("/");
+
+            // reload account management page and show success
+            render("manage_account_form.php", ["success" => "password"]);
         }
         else
         {   

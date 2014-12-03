@@ -1,7 +1,7 @@
 <?php include 'navigation.php';?>
 <h1 style="margin:0 0 20px 0;"> Straus Cup Standings </h1>
 
-<table class="table table-bordered standings">
+<table class="table table-bordered table-striped standings">
 	<thead>
 		<tr> 
 			<th> Rank </th>

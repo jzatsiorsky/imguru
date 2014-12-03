@@ -15,6 +15,7 @@
 	    <tr class="bold_row">
 	<?php else: ?>
 		<tr>
+	<?php endif ?>
 	        <td class= "col-md-1 std"><?= $row["Rank"] ?></td>
 	        <td class= "col-md-2 std"><?= $row["House"] ?></td>		
 		<td class= "col-md-1 std"><?= $row["TOTAL"] ?></td>

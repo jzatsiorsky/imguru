@@ -8,12 +8,8 @@
     // if user reached page via GET (as by clicking a link or via redirect)
     if ($_SERVER["REQUEST_METHOD"] == "GET")
     {
-		if ($_SESSION["captain"] == 1)
-		{
-			apologize("You are already a captain.");
-		}
-        // render form
-        render("become_captain_form.php", ["title" => "Become a Captain"]);
+	// render form
+        render("manage_account_form.php", ["title" => "Manage Account"]);
     }
     
     else if ($_SERVER["REQUEST_METHOD"] == "POST")
@@ -32,8 +28,8 @@
             query("UPDATE users SET captain = 1 WHERE userid = ?", $_SESSION["id"]);
 			// store captain status in SESSION
 			$_SESSION["captain"] = 1;
-            // log in
-            redirect("/");
+            // reload account management page and show success 
+            render("manage_account_form.php", ["success" => 1]);
         }
         else
         {   

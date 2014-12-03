@@ -8,8 +8,8 @@
     // if user reached page via GET (as by clicking a link or via redirect)
     if ($_SERVER["REQUEST_METHOD"] == "GET")
     {
-        // render form
-        render("change_email_form.php", ["title" => "Change E-mail"]);
+        // render form to manage account
+        render("manage_account_form.php", ["title" => "Manage Account"]);
     }
     
     else if ($_SERVER["REQUEST_METHOD"] == "POST")
@@ -29,8 +29,9 @@
 	   	 	{
 				apologize("That e-mail address may already be taken. Please try again.");
 			}
-            // log in
-            redirect("/");
+
+            // reload account management page and show success
+            render("manage_account_form.php", ["success" => 3]);
         }
         else
         {   
