@@ -12,8 +12,11 @@
 		{
 			if ($_SESSION["captain"] == 1)
 			{
+				// get all games that the user's house is in that have occurred in the past
+				if (($games = query("SELECT * FROM games WHERE (team1 = ? OR team2 = ?) AND result = 0 AND date <= CURDATE() AND time <= CURTIME() ORDER BY date DESC", $_SESSION["house"], $_SESSION["house"])) == false)
+					apologize("All games have been submitted.");
         		// render form
-       	 		render("submit_result_form.php", ["title" => "Submit Result"]);
+       	 		render("submit_result_form.php", ["title" => "Submit Result", "games" => $games]);
 			}
 			else
 			{
@@ -24,6 +27,12 @@
     
     else if ($_SERVER["REQUEST_METHOD"] == "POST")
     {
+		// apologize if empty field
+        if (is_blank($_POST["gameid"]) || is_blank($_POST["housescore"]) || is_blank($_POST["oppscore"]))
+        {
+            apologize("Make sure you fill in all fields.");
+        }
+
         if (($rows = query("SELECT * FROM games WHERE gameid = ?", $_POST["gameid"])) == false)
 		{
 			apologize("That Game ID does not exist");
@@ -47,14 +56,6 @@
 			apologize("Your house did not play in this game.");
 		}
 
-
-        // apologize if empty field
-        if (empty($_POST["gameid"]) || empty($_POST["housescore"]) || empty($_POST["oppscore"]))
-        {
-            apologize("Make sure you fill in all fields.");
-        }
-        
-
 	    // insert result into table
 	    if (query("UPDATE games SET team1score = ?, team2score = ?, result = TRUE WHERE gameid = ?", $team1score, $team2score, $_POST["gameid"]) === false)
 		{
@@ -73,4 +74,9 @@
      
         
     }
+
+// http://php.net/manual/en/function.empty.php steven@nevvix.com 
+function is_blank($value) {
+    return empty($value) && !is_numeric($value);
+}
 ?>

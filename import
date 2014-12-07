@@ -1,0 +1,48 @@
+#!/usr/bin/env php
+<?php
+
+// configuration
+    require_once(__DIR__. "/includes/config_import.php");
+
+
+    
+    // verify input
+    if ($argc < 2)
+    {
+        exit("input file");
+    }
+    
+    // file name
+    $file_name = $argv[1];
+    
+    if (!is_readable($file_name))
+    {
+        exit("file unreadable");
+    }
+    
+    // open text file
+    $importer = fopen($file_name, "r");
+    
+    // insert into places
+    while($data=fgetcsv($importer,0,","))
+    {
+        if ($data[6] == null) {
+            query("INSERT INTO games(sport, date, time, location, team1, team2, 
+                team1score, team2score, result)
+                VALUES (?, ?, ?, ?, ?, ?, '0', '0', '0')", 
+                $data[0], $data[1], $data[2], $data[3], $data[4], $data[5]);
+        }
+        else
+        {
+            query("INSERT INTO games(sport, date, time, location, team1, team2, 
+                team1score, team2score, result)
+                VALUES (?, ?, ?, ?, ?, ?, ?, ?, '1')", 
+                $data[0], $data[1], $data[2], $data[3], $data[4], $data[5],
+                $data[6], $data[7]);
+        }
+    }
+    
+    // close
+    fclose($importer);
+
+?>

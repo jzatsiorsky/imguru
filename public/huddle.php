@@ -8,8 +8,6 @@
     // if user reached page via GET (as by clicking a link or via redirect)
     if ($_SERVER["REQUEST_METHOD"] == "GET")
     {
-        $rows = query("SELECT * FROM huddle WHERE house = ?", $_SESSION["house"]);
-
         // render form
         render("huddle_form.php", ["title" => "The Huddle"]);
     }

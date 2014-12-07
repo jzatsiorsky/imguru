@@ -1,9 +1,8 @@
 <! Adapted from getbootstrap.com>
 <div style="text-align:right;">
-	<?php if (!empty($_SESSION["name"])): ?>
-	<h5>Welcome, <?= htmlspecialchars($_SESSION["name"]) ?>!</h5>
+	<h5 id="welcome">Welcome, <?= htmlspecialchars($_SESSION["name"]) ?>!</h5>
 </div>
-<?php endif ?>
+
 
 <!-- From the bootstrap documentation -->
 <div class="round">

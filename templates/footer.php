@@ -1,7 +1,7 @@
             </div>
 
             <div id="bottom">
-		CS50 Fall 2014.
+		Created by Tim McNamara, Will Mendez, and James Zatsiorsky
             </div>
         </div>
 	

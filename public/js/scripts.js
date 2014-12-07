@@ -10,29 +10,62 @@
 
 // load all the games for a sport and house
 function gamestable(loc, parameters) {
-        var games = $.getJSON("search_games.php", parameters)
+        var games = $.getJSON("search_games.php", parameters);
         games.fail( function() {
             alert("Failed to access database");
         });
 		games.done( function(data) {
 			// no articles received
+	    if (parameters.sport == "all")
+	    {
+	        if (data.length == 0)
+		    {
+			    var msg = "<h3><strong>" + parameters.house + " has no upcoming games! Be sure to check back soon!</h3>";
+			    loc.innerHTML = msg;
+		    }
+		    else
+		    {
+		        var gamedata = "<table class = 'table table-striped'><caption><h3>Upcoming games for <strong>" + parameters.house + "</strong></h3></caption>";
+			    gamedata += "<tr><th>Sport</th><th>Opponent</th><th>Date</th><th>Time</th>";
+			    gamedata += "<th>Location</th><th>More Info</th></tr>";
+			    // for loop through each message
+			    for (var i = 0, length = data.length; i < length; i++)
+			    {
+			        var opponent;
+			        if (data[i].team1 == parameters.house) {
+			            opponent = data[i].team2;
+			        }
+			        else {
+			            opponent = data[i].team1;
+			        }
+			        gamedata += "<tr><td>" + data[i].sport + "</td>";
+			        gamedata += "<td>" + opponent + "</td><td>" + data[i].date + "</td><td>" + data[i].time;
+			        gamedata += "</td><td>" + data[i].location + "</td><td><a href='game_page.php?gameid=";
+			        gamedata += data[i].gameid + "'>Click here</a></td></tr>";
+			    }
+			    gamedata += "</table>";
+			    loc.innerHTML = gamedata;
+		    }
+		}
+	    else
+		{
 			if (data.length == 0)
 			{
-				var msg = "<h3><strong>Your house has no upcoming games for this sport!</h3>";
+				var msg = "<h3><strong>" + house + " has no upcoming games for this sport!</h3>";
 				loc.innerHTML = msg;
 			}
 			else
 			{
-			    var gamedata = "<table class = 'table table-striped'><caption><h3>Upcoming games for <strong>" + parameters.house + "</strong></h3></caption>";
+			    var gamedata = "<table class = 'table table-striped'><caption><h3>Upcoming " + data[0].sport + " games for <strong>" + parameters.house + "</strong></h3></caption>";
 				gamedata += "<tr><th>Opponent</th><th>Date</th><th>Time</th><th>Location</th><th>More Info</th></tr>"
 				// for loop through each message
 				for (var i = 0, length = data.length; i < length; i++)
 				{
 				    var opponent;
-				    if (data[i].team1 === parameters.house) {
+				    if (data[i].team1 == parameters.house) {
 				        opponent = data[i].team2;
 				    }
-				    else if (data[i].team2 === paramaters.house) {
+				    else if (data[i].team2 == parameters.house) {
 				        opponent = data[i].team1;
 				    }
 				    gamedata += "<tr><td>" + opponent + "</td><td>" + data[i].date + "</td><td>" + data[i].time;
@@ -42,8 +75,12 @@ function gamestable(loc, parameters) {
 				gamedata += "</table>";
 				loc.innerHTML = gamedata;
 			}
-		});
+        }
+    });
 }
+    
+       
+			
 
 // google maps api
 function addgooglemap(loc, mapinfo) {
@@ -52,7 +89,7 @@ function addgooglemap(loc, mapinfo) {
             center: new google.maps.LatLng(mapinfo.lat, mapinfo.long),
             zoom: 17,
             mapTypeId: google.maps.MapTypeId.ROADMAP
-            }
+            };
         var map = new google.maps.Map(loc, mapOptions);
         var marker = new google.maps.Marker({
             position: new google.maps.LatLng(mapinfo.lat, mapinfo.long),
@@ -72,14 +109,13 @@ function loadroster(roster, parameters) {
         var rosterdata;
         if (data.length == 0)
         {
-	        rosterdata = "<h3>No one from your house has signed up for this game yet.";
-	        rosterdata += "<p>You should be the first!</p></h3>";
+	        rosterdata = "<h3>Be the first from your house to sign up!</h3>";
 	        
         }
         else
         {
-            var rosterdata = "<h3>People from <strong>" + parameters.house + "</strong> attending this game.</h3>"
-            rosterdata += "<table class='table table-striped'><tr><th>Name</th><th>email</th></tr>";
+            var rosterdata = "<h3>People from " + parameters.house + " attending this game.</h3>"
+            rosterdata += "<table class='table table-striped'><tr><th>Name</th><th>E-mail</th></tr>";
 	        // for loop through each player
 	        for (var i = 0, length = data.length; i < length; i++)
 	        {
@@ -112,5 +148,14 @@ function rosterupdate(parameters) {
         method: 'POST',
         success: function() {}
     });
+	if (parameters.attending == 1)
+	{
+		parameters.attending = 0;
+	}
+	else
+	{
+		parameters.attending = 1;
+	}
+    loadroster(document.getElementById('roster'), parameters);
 }
 

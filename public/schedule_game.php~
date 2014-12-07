@@ -28,13 +28,15 @@
         
 	// change the format of the date to insert into SQL table
 	$date = date("Y-m-d", strtotime($_POST["date"]));
+	// http://stackoverflow.com/questions/26701256/convert-time-with-format-hhmm-am-pm-to-hhmmss
+	$time = date("H:i:s", strtotime( $_POST["time"]));
 
         // insert the game into the schedule
-        if (query("INSERT INTO games(sport, date, time, location, team1, team2) VALUES(?, ?, ?, ?, ?, ?)", $_POST["sport"], $date,  $_POST["time"], $_POST["location"], $_SESSION["house"], $_POST["opponent"]) === false)
+        if (query("INSERT INTO games(sport, date, time, location, details, team1, team2) VALUES(?, ?, ?, ?, ?, ?, ?)", $_POST["sport"], $date,  $time, $_POST["location"], $_POST["location_details"], $_SESSION["house"], $_POST["opponent"]) === false)
         {
             apologize("Sorry, there was an error trying to schedule your game.");
         }
-        
+
         redirect("/");
     }
 ?>

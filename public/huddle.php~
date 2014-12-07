@@ -11,7 +11,7 @@
         $rows = query("SELECT * FROM huddle WHERE house = ?", $_SESSION["house"]);
 
         // render form
-        render("huddle_form.php", ["title" => "The Huddle", "rows" => $rows]);
+        render("huddle_form.php", ["title" => "The Huddle"]);
     }
     
     else if ($_SERVER["REQUEST_METHOD"] == "POST")

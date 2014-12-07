@@ -1,14 +1,12 @@
 <?php include 'navigation.php';?>
 <head>
     <script src="/js/jquery-2.1.1.js"></script> 
-    <script src="/js/moment.js"></script> 
-    <script src="/js/combodate.js"></script>
     <script src="/js/scripts.js"></script> 
 
 	<!-- http://keith-wood.name/datepick.HTML -->
 	<link rel="stylesheet" type="text/css" href="css/jquery.datepick.css"> 
-	<script type="text/javascript" src="js/date/jquery.plugin.js"></script> 
-	<script type="text/javascript" src="js/date/jquery.datepick.js"></script>
+	<script type="text/javascript" src="js/jquery.plugin.js"></script> 
+	<script type="text/javascript" src="js/jquery.datepick.js"></script>
 	<script>
 		$(function() {
 			$('#popupDatepicker').datepick();
@@ -21,7 +19,7 @@
 	
 	<script>
 	$(document).ready(function(){
-		$('input.timepicker').timepicker({minHour: 10, defaultTime: "6:00 p", maxHour: 22, dynamic: false});
+		$('input.timepicker').timepicker({minHour: 10, maxHour: 22, dynamic: false});
 	});
 	</script>
 
@@ -32,21 +30,21 @@
         <fieldset>
             <div class = "form-group" style="clear:both;">
                 <select class = "form-control" name = "sport">
-                <option value = "">Select sport</option>
-                <option value = "A-League Basketball">A-League Basketball</option>
-                <option value = "B-League Basketball">B-League Basketball</option>
-                <option value = "C-League Basketball">C-League Basketball</option>
-                <option value = "Men's A Crew">Men's A Crew</option>
-                <option value = "Men's B Crew">Men's B Crew</option>
-                <option value = "Women's A Crew">Women's A Crew</option>
-                <option value = "Women's B Crew">Women's B Crew</option>
+                <option value = "" >Select sport</option>
+                <option value = "A Basketball">A Basketball</option>
+                <option value = "B Basketball">B Basketball</option>
+                <option value = "C Basketball">C Basketball</option>
+                <option value = "A Crew - Men">A Crew - Men</option>
+                <option value = "B Crew - Men">B Crew - Men</option>
+                <option value = "A Crew - Women">A Crew - Women</option>
+                <option value = "B Crew - Women">B Crew - Women</option>
                 <option value = "Flag Football">Flag Football</option>
                 <option value = "Ice Hockey">Ice Hockey</option>
                 <option value = "Soccer">Soccer</option>
                 <option value = "Softball">Softball</option>
                 <option value = "Tennis">Tennis</option>
-                <option value = "A-League Volleyball">A-League Volleyball</option>
-                <option value = "B-League Volleyball">B-League Volleyball</option>
+                <option value = "A Volleyball">A Volleyball</option>
+                <option value = "B Volleyball">B Volleyball</option>
                 <option value = "Special Event">Special Event</option>
                 </select>
             </div>
@@ -69,15 +67,13 @@
 				</select>
 			</div>
             <div class = "form-group">
-				<label class="input" for="popupDatepicker">Date: </label>
-				<input class="form-control" type="text" id="popupDatepicker" class="is-pickdate" name="date" autocomplete="off">
+				<input class="form-control" type="text" id="popupDatepicker" class="is-pickdate" name="date" autocomplete="off" placeholder="Date">
 			</div>
            <div class="form-group">
-				<label class="input" for="time">Time: </label>
-				<input class="timepicker form-control" id="time" name="time" autocomplete="off">
+				<input class="timepicker form-control" id="time" name="time" autocomplete="off" placeholder="Time">
 			</div>
             <div class="form-group" style="clear:both;">
-				<select class="form-control" name="location">
+				<select class="form-control schedule " name="location">
 				<option value = "">Select Location </option>
 				<option value = "MAC">Malkin Athletic Center </option>
 				<option value = "QRAC">QRAC </option>
@@ -86,10 +82,10 @@
 				</select>
 			</div>
 			<div class="form-group">
-			<input class="form-control" name="location_details" placeholder="Location Details (e.g. Court Number)" type="text">
+			<input class="form-control schedule" name="location_details" placeholder="Location Details" type="text">
 			</div>
 			<div class="form-group">
-				<button type="submit" class="btn btn-default">Insert game into the schedule</button>
+				<button type="submit" class="btn btn-default">Schedule game</button>
 			</div>
         </fieldset>
     </div>

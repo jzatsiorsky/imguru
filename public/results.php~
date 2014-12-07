@@ -3,10 +3,22 @@
     // configuration
     require("../includes/config.php");
 
-	$rows = query("SELECT * FROM huddle WHERE house = ?", $_SESSION["house"]);
+	if (($sports = query("SELECT sport FROM games WHERE result = 1")) == false)
+		apologize("No results posted!");
+	else
+	{
+		for($i = 0, $n = count($sports); $i < $n; $i++) 
+		{
+		    $buffer[$i] = $sports[$i]["sport"]; 
+		}
+		$sports = array_unique($buffer);
 
-	// render form
-	render("results_form.php", ["title" => "Results"]);
+		// alphabetize array
+		$rows = sort($sports);
+		// results form
+		render("results_form.php", ["title" => "Results", "rows" => $rows]);  
+	}
+	
   
 
 ?>

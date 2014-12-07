@@ -5,16 +5,16 @@
 		<span>See results for:</span>
 		<select class="form-control" name="sport" id="threads">
 			<option value = "all">All sports</option>
-			<option value = "football"> Flag football</option>
-			<option value = "frisbee"> Ultimate frisbee</option>
-			<option value = "tennis"> Tennis</option>
-			<option value = "squash"> Squash</option>
-			<option value = "basketball"> Basketball</option>
-			<option value = "soccer"> Soccer</option>
+			<?php
+		        foreach($rows as $row)
+		        {
+		            print("<option value = '{$row}'>{$row}</option>");
+		        }
+            ?>
 		</select>
 	</div>
 	<div class="checkbox">
-		<input type="checkbox" name="house_only" id="checkbox"><label>  <?= htmlspecialchars($_SESSION["house"]) ?> only?</label>
+		<label><input type="checkbox" name="house_only" id="checkbox">Show <?= htmlspecialchars($_SESSION["house"]) ?> results only</label>
 	</div>
 	
 
@@ -38,7 +38,7 @@
 			// no articles received
 			if (length == 0)
 			{
-				document.getElementById('results').innerHTML = "<h3>No results posted on IMguru yet.</h3>";
+				document.getElementById('results').innerHTML = "<h3>No results posted yet.</h3>";
 			}
 			else
 			{
@@ -70,7 +70,7 @@
 			// no articles received
 			if (length == 0)
 			{
-				document.getElementById('results').innerHTML = "<h3>No results posted yet for this sport.</h3>";
+				document.getElementById('results').innerHTML = "<h3>No results posted yet.</h3>";
 			}
 			else
 			{
@@ -102,7 +102,7 @@
 			// no articles received
 			if (length == 0)
 			{
-				document.getElementById('results').innerHTML = "<h3>No results posted yet for this sport.</h3>";
+				document.getElementById('results').innerHTML = "<h3>No results posted yet.</h3>";
 			}
 			else
 			{

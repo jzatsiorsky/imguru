@@ -11,9 +11,7 @@
 	<link rel="stylesheet" type="text/css" href="css/component.css" />
 	<script src="js/modernizr.custom.js"></script>
 
-	<!-- Include for creative select - tympanus.net -->
-	
-	
+	<!-- General style sheet -->
 	<link href="/css/styles-default.css" rel="stylesheet"/>
 
         <?php if (isset($title)): ?>
@@ -30,28 +28,30 @@
     </head>
 
     <body>
-	
         <div class="container">
 
             <div id="top">	
 			<?php if (isset($_SESSION["house"]))
 				{
 					if ($_SESSION["house"] == "Adams")
-						$link = "http://www.adamshouse.harvard.edu";
+						$link = "http://adamshouse.harvard.edu";
 					else if ($_SESSION["house"] == "Winthrop")
 						$link = "http://winthrophouse.net";
 					else
-						$link = "http://www." . $_SESSION["house"] . ".harvard.edu";
+						$link = "http:// . $_SESSION["house"] . ".harvard.edu";
 				}
 			?>
 			
 			<!-- If logged in -->
 			<?php if (isset($_SESSION["house"])): ?>
+			<div>
 			<a href="/"><img alt="Guru" src="/img/logo_text.gif" class="logo"/></a>
 			<a href = <?= $link ?> >
 				<img alt="Shield" id="shield2" src="/img/<?= htmlspecialchars(strtolower($_SESSION["house"])) ?>_shield.jpg"/>
 			</a>
 			<h1 class="title"><?= htmlspecialchars($_SESSION["house"]) ?> House Intramurals</h1>
+			</div>
+
 			
 			<?php else: ?>
 			<a href="/"><img alt="Guru" src="/img/logo_text.gif" style="margin: 0;" class="logo-login"/></a>

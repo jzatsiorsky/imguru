@@ -72,7 +72,7 @@ h1{
 	display:inline-block;
 	background-color: #A41034;
 	padding: 20px 0px 0px 0px;
-	width: 100%;
+	width: 75%;
 	border: 8px solid black;
 	border-radius: 9px;
 }
@@ -333,3 +333,52 @@ nav{
 	text-decoration: none;
 	color: white;
 }
+
+label.input{
+	color:white;
+}
+
+.gameleft{
+    display: inline-block;
+    width: 50%;
+}
+
+.gameright{
+    display: inline-block;
+    width: 40%;
+}
+
+.shieldleft{
+    display: inline-block;
+    width: 20%;
+}
+.shieldright{
+    display: inline-block;
+    width: 20%;
+}
+.shieldcenter{
+    display: inline-block;
+    width: 10%;
+}
+
+.shieldbox{
+    height: 250px;
+}
+
+.schedule{
+	width: 400px;
+}
+
+.trash-posts{
+	margin-left: auto;
+	margin-right: auto;
+	width: 550px;
+	
+}
+
+.trash-create{
+	margin-left: auto;
+	margin-right: auto;
+	width: 600px;
+}
+

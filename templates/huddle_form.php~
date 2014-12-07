@@ -6,13 +6,21 @@
 	<div class="form-group" style="clear:both;">
 		<span>See posts for:</span>
 		<select class="form-control" name="sport" id="thr class='post_break'eads">
-			<option value = "general"> <?= htmlspecialchars($_SESSION["house"]) ?> - General</option>
-			<option value = "football"> <?= htmlspecialchars($_SESSION["house"]) ?> - Flag football</option>
-			<option value = "frisbee"> <?= htmlspecialchars($_SESSION["house"]) ?> - Ultimate frisbee</option>
-			<option value = "tennis"> <?= htmlspecialchars($_SESSION["house"]) ?> - Tennis</option>
-			<option value = "squash"> <?= htmlspecialchars($_SESSION["house"]) ?> - Squash</option>
-			<option value = "basketball"> <?= htmlspecialchars($_SESSION["house"]) ?> - Basketball</option>
-			<option value = "soccer"> <?= htmlspecialchars($_SESSION["house"]) ?> - Soccer</option>
+			<option value = "general"> General</option>
+			<option value = "A Basketball">A-Basketball</option>
+		        <option value = "B Basketball">B-Basketball</option>
+		        <option value = "C Basketball">C-Basketball</option>
+		        <option value = "A Crew - Men">A Crew - Men</option>
+		        <option value = "B Crew - Men">B Crew - Men</option>
+		        <option value = "A Crew - Women">A Crew - Women</option>
+		        <option value = "B Crew - Women">B Crew - Women</option>
+		        <option value = "Flag Football">Flag Football</option>
+		        <option value = "Ice Hockey">Ice Hockey</option>
+		        <option value = "Soccer">Soccer</option>
+		        <option value = "Softball">Softball</option>
+		        <option value = "Tennis">Tennis</option>
+		        <option value = "A Volleyball">A-Volleyball</option>
+		        <option value = "B Volleyball">B-Volleyball</option>
 		</select>
 	</div>
 
@@ -33,7 +41,7 @@
 		</div>
 		<div class="flexed">
 			<!- View past posts>
-			<h3 class="message_title">Past posts.</h3>
+			<h3>Past posts.</h3>
 			<div id="past_posts">
 			</div>
 		</div>
