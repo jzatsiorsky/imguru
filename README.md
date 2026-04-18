@@ -1,4 +1,3 @@
-imguru
-======
+# imguru
 
-IMGuru CS50
+IMGuru CS50: great times!
